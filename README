@@ -14,11 +14,11 @@ Vorraussetzungen:
 SQLite >= 3.7.14.1
     http://sqlite.org/
 
-Perl >= 5.14.2
+Perl >= 5.16.1
     http://perldoc.perl.org
     http://metacpan.org
 
-Mojolicious >= 3.5
+Mojolicious >= 3.52
     http://mojolicio.us/
 
 DBI >= 1.662
@@ -29,6 +29,40 @@ DBD::SQLite >= 1.37
 
 DBIx::Class >= 0.08203
     http://www.dbix-class.org/
+
+Empfehlungen:
+=============
+
+Strawberryperl
+    Perl für Windows-Benutzer
+
+    http://strawberryperl.com
+    
+    Enthält bereits:
+
+        Perl, DBI, DBD::SQLite, cpanminus
+
+cpanminus
+    https://metacpan.org/module/App::cpanminus
+
+Moose, Moo, Mo
+    https://metacpan.org/module/Moose
+    https://metacpan.org/module/Moo
+    https://metacpan.org/module/Mo
+
+    Falls jemand richtige Objektorientierung in Perl machen will
+
+    Je mehr Buchstaben, desto mehr Features, aber eben mit Performance-Einbußen
+
+Starman
+    https://metacpan.org/module/Starman
+
+    Hochperformanter preforking Webserver in Perl
+
+Padre
+    http://padre-ide.de/blog/
+
+    Perl-IDE für verschiedene Plattformen
 
 Zielgruppenbeschreibung:
 ========================
