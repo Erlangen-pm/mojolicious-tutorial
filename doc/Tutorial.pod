@@ -236,7 +236,7 @@ Die HTTP-Methode C<'get'>.
 
 Die Route C<'/'>.
 
-Fatcomma (C<=>>). 
+Fatcomma (C<=E<gt>>). 
     
 Routenparameter C<'/:param1'> mit Wildcards.
 
@@ -262,9 +262,9 @@ Weitere Funktionen:
 
 =item C<my $sessionhashref = session();>
 
-=item C<stash(name => $value);>
+=item C<stash(name =E<gt> $value);>
 
-=item C<flas(name => $value);>
+=item C<flas(name =E<gt> $value);>
 
 =back
 
@@ -301,11 +301,11 @@ Weitere Funktionen:
 
 =item C<%== >
 
-=item C<<% ... %>>
+=item C<E<lt>% ... %E<gt>>
 
-=item C<<%= ... %>>
+=item C<E<lt>%= ... %E<gt>>
 
-=item C<<%== ... %>>
+=item C<E<lt>%== ... %E<gt>>
 
 =back
 
