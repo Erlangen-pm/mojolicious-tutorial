@@ -27,29 +27,29 @@ values ('Ludmilla', 'Dankbarkeit', '23.7.1998', 'schnuffelpuffelchen@facebook.co
 
 
 insert into pruefungen (ref_professor, bezeichnung, datum)
-values (0, 'Angew. Inf. WS 2011', '23.12.2011');
+values (1, 'Angew. Inf. WS 2011', '23.12.2011');
 
 insert into pruefungen (ref_professor, bezeichnung, datum)
-values (0, 'Perl WS 2012', '1.1.2013');
+values (1, 'Perl WS 2012', '1.1.2013');
 
 insert into pruefungen (ref_professor, bezeichnung, datum)
-values (1, 'Soz. Phil. Dings WS 2013', '11.11.2013');
+values (2, 'Soz. Phil. Dings WS 2013', '11.11.2013');
 
 
 
-insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (0,0,6);
-insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (0,1,3);
-insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (0,2,1);
-insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (0,4,2);
-
-insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (1,0);
-insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (1,2);
-insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (1,3);
-insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (1,4);
-insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (1,5);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (1,1,6);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (1,2,3);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (1,3,1);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender, note) values (1,5,2);
 
 insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (2,1);
 insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (2,3);
 insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (2,4);
 insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (2,5);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (2,6);
+
+insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (3,2);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (3,4);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (3,5);
+insert into stud_zu_pruef (ref_pruefung, ref_studierender) values (3,6);
 
