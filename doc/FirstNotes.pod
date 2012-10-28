@@ -9,9 +9,12 @@ Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
 
     $ perl -Mojo -E 'say g("mojolicio.us")->dom->at("title")->text'
 
-=over
+=over 1
+
 =item L<Weitere Informationen|https://metacpan.org/module/ojo>
+
 =item L<Perl-Commandline-Flags|http://perldoc.perl.org/perlrun.html>
+
 =back
 
 =head3 Perl-Kommandozeilenreferenz - praktische Kurzfassung
