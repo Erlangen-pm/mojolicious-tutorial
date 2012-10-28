@@ -1,5 +1,7 @@
 Einführung in das Webframework Mojolicious in der Programmiersprache Perl
 
+Projekt-URL: https://github.com/bedivere/mojolicious-tutorial
+
 Einleitung
 ==========
 
@@ -7,6 +9,41 @@ Dies ist ein einfaches Hands-On-Tutorial für moderne Webprogrammierung in Perl
 am Beispiel des Mojolcious-Frameworks. Das Tutorial richtet sich an Programmierer,
 die zumindest mal von Webprogrammierung, relationalen Datenbanken und Perl gehört
 haben.
+
+Im Tutorial soll in etwa einer Stunde allgemein etwas zu Perl, Webentwicklung,
+MVC-Konzept und unsere Arbeitsumgebung gesagt werden. Das ist zugegebenermaßen
+keine sehr lange Zeit, deswegen sind Vorkenntnisse wie unten beschrieben 
+unumgänglich. 
+
+Anschließend soll an einem kleinen Beispiel eine Webanwendung in Perl mit
+Mojolicious auf Grundlage einer SQLite-Datenbank erstellt werden. Das füllt den
+rest des Tages aus (5 bis 7 Stunden).
+
+Während dieses Praktischen Teiles wird neben der eigentlichen Webprogrammierung
+auch immer wieder das Programmieren in Perl angesprochen, allerdings kann  das
+wegen der geringen Zeit doch nur oberflächlich erfolgen.
+
+Für den ersten theoretischen Teil sind hübbsche bunte Folien vorgesehen (doc/slides).
+
+Der zweite Teil ist praktischer Natur und findet dann als live-Demo im Texteditor der 
+Wahl sowie im Kommandozeilenprogramm aka Terminalemulator der Wahl statt.
+
+Am Ende des praktischen Teiles steht eine Webanwendung, die sich vorrangig
+auf die Umsetzung der zugrundeliegenden Funktionen bezieht. Ästethische Ansprüche
+sowie weiterführenden belangen von Usability oder lustige Effekte mittels Javascript/
+JQuery und Ajax werden hier ausgeklammert.
+
+Die Webanwendung, die im praktischen Teil erstellt wird, befasst sich inhaltlich mit
+dem Thema Prüfungsverwaltung. Es sollen in einer relationalen Datenbank Listen
+von Professoren, Studierenden und Prüfungen gepflegt werden, die in geeignerter Weise
+verknüpft sind:
+    - Ein Professor hat mehrere Prüfungen auszugestalten
+    - Ein Studierender nimmt an mehreren Prüfungen teil
+    - Eine Prüfung wird von genau einem Professor durchgeführt
+    - An einer Prüfung nehmen mehrere Studierende teil
+
+Eine genauere Beschreibung der Inhalte des Datenmodells hinter dieser Aufgabe ist
+dem Datenschema unter "src/Schema.sql" zu entnehmen.
 
 Vorraussetzungen:
 =================
@@ -17,6 +54,8 @@ SQLite >= 3.7.14.1
 Perl >= 5.16.1
     http://perldoc.perl.org
     http://metacpan.org
+    http://www.perl-community.de/bat/content/view/home
+    http://perl-tutorial.org/
 
 Mojolicious >= 3.52
     http://mojolicio.us/
@@ -79,7 +118,7 @@ Zielgruppenbeschreibung:
   - Imparatives Programmieren
   - Webprogrammierung Allgemein
   - HTML, CSS
-+ Anfänger-Kenntnisse:
++ Grundkenntnisse:
   - MVC
   - Perl
   - Reguläre Ausdrücke
