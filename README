@@ -48,9 +48,6 @@ dem Datenschema unter "src/Schema.sql" zu entnehmen.
 Vorraussetzungen:
 =================
 
-SQLite >= 3.7.14.1
-    http://sqlite.org/
-
 Perl >= 5.16.1
     http://perldoc.perl.org
     http://metacpan.org
@@ -63,11 +60,14 @@ Mojolicious >= 3.52
 DBI >= 1.662
     http://dbi.perl.org/
 
+DBIx::Class >= 0.08203
+    http://www.dbix-class.org/
+
 DBD::SQLite >= 1.37
     https://metacpan.org/module/DBD::SQLite
 
-DBIx::Class >= 0.08203
-    http://www.dbix-class.org/
+SQLite >= 3.7.14.1
+    http://sqlite.org/
 
 Empfehlungen:
 =============
