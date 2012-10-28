@@ -1,3 +1,5 @@
+use utf8;
+
 =head1 Was ist Perl
 
 =head1 Was ist Mojolicious
