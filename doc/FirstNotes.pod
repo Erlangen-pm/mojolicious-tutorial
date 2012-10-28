@@ -110,11 +110,40 @@ ansatzweise der REPL in LISP).
 =back
 =back
 
+=head2 Warum Mojolicious?
+
+=head3 Warum nicht CGI?
+
+Plack, FastCGI, Parameterbehandlung, Sessionhandling, JSON, REST, Plugins,
+Templates, Routen, Modernes Perl, MVC
+
+=head3 Warum nicht Catalyst?
+
+=head3 Warum nicht Dancer?
+
 =head2 Erste Schritte: "Hello World"
 
     $ mojo generate lite_app HelloWorld
 
 Erzeugt ein einzelnes Script im "Sinatra"-Style, welches unter
 C<src/HelloWorld> zu finden ist.
+
+Das Hello-World-Programm kann mit dem Testserver C<morbo> gestartet werden:
+
+    $ morbo HelloWorld
+
+Jetzt läuft unter Port 3000 auf Localhost die Anwendung und auf der 
+Kommandozeile blubbern lustige Debuggingausgaben vor sich hin.
+
+Für den produktiven Einsatz kann das Script als CGI-Script, in einer FastCGI- oder
+mod_perl-Umgebung verwendet werden (von letzterem wird i.d.R. abgeraten). Weiterhin
+kann der für produktive Umgebungen mitgelieferte Applicationserver hypnotoad, ein
+anderer Perl-Applicationserver wie Starman oder gar eine Plack-Umgebung (PSGI) verwendet
+werden.
+
+Im C<HelloWorld> ist das Plugin C<PODRenderer> aktiviert, damit kann die Dokumentation
+der lokalen Perl-Umgebung bequem im Browser über die URL L<http://localhost:3000/perldoc>
+bzw. L<http://localhost:3000/perldoc/perltoc> oder L<http://localhost:3000/perldoc/Modulname>
+angezeigt werden.
 
 =cut
