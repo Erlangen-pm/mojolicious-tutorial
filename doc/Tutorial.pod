@@ -118,12 +118,57 @@ Templates, Routen, Modernes Perl, MVC
 
 =head3 Warum nicht Dancer?
 
+=head2 Konzepte hinter Mojolicous
+
+=head3 MVC - Model+View+Controler
+
+=head3 Templates
+
+=head4 Embedded-Perl-Template
+
+=head4 Weitere Templates über Plugins verfügbar
+
+=over 1
+=item L<https://metacpan.org/module/MojoX::Renderer::HTP>
+=item L<https://metacpan.org/module/Mojolicious::Plugin::TtRenderer>
+=item L<https://metacpan.org/module/Mojolicious::Plugin::Mason2Renderer>
+=back
+
+=head3 Routen
+
+=head3 Controller
+
+=head3 Code-Generierung über das Kommandozeilenprogramm C<mojo>
+
+=head3 Testing
+
+=head3 Deployment
+
+=head4 Reverse Proxy
+
+=head4 CGI, FastCGI, mod_perl
+
+=head1 DBIx::Class - ORM in Perl
+
 =head2 Erste Schritte: "Hello World"
+
+Mojolicious verfügt über einen Mechanismus, der sich C<Mojolicious::Lite> nennt. C<Mojolicious::Lite>
+stellt einen vereinfachten prozeduralen Zugang zu Mojolicious dar, über den wie im Stil von "Sinatra" 
+(oder wie dat heißt) für Ruby direkt der Controller an die Routendefinition angefügt wird.
+
+Weiterhin ist es in C<Mojolicious::Lite>-Anwendungen möglich, Templates inline im C<__DATA__>-Bereich
+am Ende eines Perl-Scriptes abzulegen komplett mit Informationen über den Pfad der Templates innerhalb
+der Applikation. Außerdem können Statische Dateien (Javascript-Quellcode, CSS-Stylesheets) ebenfalls
+im C<__DATA__>-Teil abgelegt werden zusammen mit ihren Pfadinformationen. Als Krönung ist es auch
+möglich, binäre Dateien Base64-Kodiert (über das Kommandozeilenprogramm C<base64>) mit Pfadangabe
+unterhalb von C<__DATA__> abzulegen (Bilder).
+
+C<Mojolicious::Lite> eignet sich sehr gut für schnelles Prototyping und für kleine Anwendungen, die
+als eine einzelne kompakte Datei verteilt werden sollen.
 
     $ mojo generate lite_app HelloWorld
 
-Erzeugt ein einzelnes Script im "Sinatra"-Style, welches unter
-C<src/HelloWorld> zu finden ist.
+Das erzeugte Script ist hier im Projektverzeichnis als Referenz unter C<src/HelloWorld> zu finden.
 
 Das Hello-World-Programm kann mit dem Testserver C<morbo> gestartet werden:
 
@@ -138,9 +183,126 @@ kann der für produktive Umgebungen mitgelieferte Applicationserver hypnotoad, e
 anderer Perl-Applicationserver wie Starman oder gar eine Plack-Umgebung (PSGI) verwendet
 werden.
 
+Hinweis: Da C<Mojolicious::Lite> hervorrangend für Prototyping verwendet werden kann, beginnt damit
+gelegentlich ein größeres Projekt. Um erstellte Dateien und Templates jetzt nicht mühsam hin und her
+kopieren zu müssen, bietet Mojolicious die Möglichkeit, aus einer C<Mojolicious::Lite>-Anwendung heraus
+direkt eine komplexere Mojolicious-Anwendung zu erstellen. Dazu muss einfach C<mojo inflate 'Dateiname'>
+an der Kommandozeile aufgerufen werden. Dann werden die im C<__DATA__>-Bereich angegeben Dateien
+ihrer Pfade entsprechend auf Verzeichnisse aufgeteilt und die Arbeit am großen Mojolicious-Projekt
+kann beginnen.
+
+=head3 Walkthrough durch die Begrüßte Welt
+
+=head4 Hashbang!
+
+Sollte klar sein, die Unixtypische SheBang oder Hashbang oder wie auch immer man das nennen möchte.
+
+    #!/usr/bin/env perl
+
+=head4 Mojolicious einbinden
+
+    use Mojolicious::Lite;
+
+Frage: Wo ist C<use strict;> und C<use warnings;>, was Perl-Anfänger in jedem Forum
+und von jedem Perl-Profi nahegelegt wird?
+
+Antwort: Der Aufruf C<use Mojolicious::Lite;> schaltet automatisch die Pragmas C<strict>
+und C<warnings> ein, welche sonst separat mit L<perlfunc/"use"> aufgerufen werden müssten.
+
+=head4 Ein Plugin verwenden
+
+Plugins werden mit der Subroutine C<plugin> zugeschalten.
+
+    # Documentation browser under "/perldoc"
+    plugin 'PODRenderer';
+
 Im C<HelloWorld> ist das Plugin C<PODRenderer> aktiviert, damit kann die Dokumentation
 der lokalen Perl-Umgebung bequem im Browser über die URL L<http://localhost:3000/perldoc>
 bzw. L<http://localhost:3000/perldoc/perltoc> oder L<http://localhost:3000/perldoc/Modulname>
 angezeigt werden.
+
+=head4 Eine Route mit Controller definieren
+
+    get '/' => sub {
+      my $self = shift;
+      $self->render('index');
+    };
+
+Die HTTP-Methode C<'get'>.
+
+Die Route C<'/'>.
+
+Fatcomma (C<=>>). 
+    
+Routenparameter C<'/:param1'> mit Wildcards.
+
+Parameterparsing über reguläre Ausdrücke.
+
+Eine anonyme Subroutine (C<sub {}>).
+
+Funktionsargumente entpacken, die Unterschiede und der Nutzen der verschiedenen Herangehensweisen:
+
+    my $self = shift;
+    my ( $self, $param1, $param2 ) = @_
+
+Ein Template mit Informationen ausgeben C<render>.
+
+Warum kommt da ein C<;> und bei einer Subroutinendefinition (C<sub subname {}>) nicht? 
+Das Semikolon ist hier wichtig.
+
+Weitere Funktionen:
+
+=over 1
+
+=item C<my $value1 = param('param1');>
+
+=item C<my $sessionhashref = session();>
+
+=item C<stash(name => $value);>
+
+=item C<flas(name => $value);>
+
+=back
+
+=head4 Die Anwendung starten
+
+    app->start;
+
+=head4 Der Data-Bereich mit Inline-Templates und statischen Dateien
+
+    __DATA__
+
+=head4 Dateipfade für Inline-Dateien und -Templates
+
+    @@ index.html.ep
+
+=head4 Perl-Code in Mojolicious-Embedded-Perl-Templates
+
+    % layout 'default';
+    % title 'Welcome';
+    Welcome to the Mojolicious real-time web framework!
+
+    @@ layouts/default.html.ep
+    <!DOCTYPE html>
+    <html>
+      <head><title><%= title %></title></head>
+      <body><%= content %></body>
+    </html>
+
+=over 1
+
+=item C<% >
+
+=item C<%= >
+
+=item C<%== >
+
+=item C<<% ... %>>
+
+=item C<<%= ... %>>
+
+=item C<<%== ... %>>
+
+=back
 
 =cut
