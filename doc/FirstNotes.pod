@@ -1,0 +1,120 @@
+=head1 Was ist Perl
+
+=head1 Was ist Mojolicious
+
+=head2 ojo
+
+Diese ist ein Modul für Onliner, welche die Möglichkeiten von Mojolicious (CSS3-Selectoren,
+Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
+
+    $ perl -Mojo -E 'say g("mojolicio.us")->dom->at("title")->text'
+
+=over
+=item L<Weitere Informationen|https://metacpan.org/module/ojo>
+=item L<Perl-Commandline-Flags|http://perldoc.perl.org/perlrun.html>
+=over
+=item -e
+
+Der Parameter, der nach C<-e> kommt ist Perl-Code und wird ausgeführt.
+
+=item -E
+
+Wie C<-e>, nur mit Features freigeschalten (Features, die ab Perl Version 
+5.10 verfügbar sind und unter Umständen mit der Rückwärtskompatibilität 
+brechen).
+
+=item -n, -p
+
+Wird in Zusammenhang mit C<-e> und C<-E> verwendet.
+
+Nimmt ähnlich wie C<sed> oder C<awk> Dateiinhalte Zeilenweise entgegen und legt
+jede Zeile in Perls "it" (C<$_>) ab. Dateiinhalte werden hierbei als letztes 
+Argument in Form des zugehörigen Dateinamens oder über die Standardeingabe 
+angenommen.
+
+Folgende Schleife kann man sich dabei vorstellen:
+
+     LINE:
+     while (<>) {
+         say; # hier kann man etwas mit $_ anstellen
+     }
+
+Ähnlich wie in C<awk> ist es auch hier möglich, C<BEGIN { }>- und C<END { }>-
+Blöcke im C<-e>/C<-E>-Parameter zu verwenden, in denen Vor- oder 
+Nachbereitungsaufgaben der zeilenweisen Abarbeitung durchgeführt werden können.
+
+C<-p> gibt zusätzlich am Ende der Datei den letztgesetzten Inhalt von C<$_> aus.
+
+=item -l
+
+Damit kann man die Automatische Zeilenendebehandlung einschalten. D.h. den eingelesenen
+Zeilen bei C<-n> und C<-p> wird automatisch der Zeilenumbruch abgeschnitten.
+
+=item -a
+
+Splittet eine Zeile bei C<-n> oder C<-p> automatisch an Leerzeichenähnlichen Zeichen 
+auf und packt die Teile in das vorbereitete C<@F>.
+
+Leerzeichenähnlich heißt hier im Regelfall Leerzeichen und Tabulator.
+
+=over
+=item -F
+
+Mit C<-F> kann man bei Verwendung von C<-a> ein Zeichen angeben, an welchem
+eine Zeile aufgespalten wird. Das entsprechende Zeichen muss C<-F> als Parameter
+mitgegeben werden.
+
+=back
+
+=item -M
+
+Das dem C<-M> als Parameter mitgegebene Modul laden (L<perlfunc/"use Module">).
+Für mehrere zu ladende Module kann C<-M> mehrmals angegeben werden.
+
+=item -I
+
+Gibt als Parameter einen zusätzlichen Pfad an, in dem Perl nach Modulen sucht.
+Für mehrere Pfade kann C<-I> mehrmals verwendet werden.
+
+=item -c
+
+Prüft lediglich die Syntax eines Perl-Scriptes.
+
+=item -w
+
+Schaltet Warnungen ein, die den Programmierer mit zusätzlichen Meldungen
+vor Fehlern bewahren sollen.
+
+=item -T
+
+Schaltet den Taint-Modus ein. Hier werden alle Daten, die von außerhalb des
+Programmes kommen als gefleckt markiert und dürfen erst weiter verwendet werden
+(für SQL-Statements oder Ausgaben), wenn sie zunächst gereinigt werden (i.d.R.
+in dem man die Daten gegen eine RegEx prüft und daraus dann die eigentlichen
+Nutzdaten zieht).
+
+=item -d
+
+Schaltet den Debugger zu. Beispielsweise kann man mit C<-d:DNYTProf> den 
+Profiler L<Devel::NYTProf> verwenden, um das Programm zu profilen.
+
+=over
+=item -de 0
+
+Geht direkt in den Debugmodus ohne vorher Code auszuführen. Das ist das Perl-
+Äquivalent einer Interaktiven Shellumgebung (sowas wie C<irb> in Ruby oder
+ansatzweise der REPL in LISP).
+
+=back
+
+=back
+=back
+
+=head2 Erste Schritte: "Hello World"
+
+    $ mojo generate lite_app HelloWorld
+
+Erzeugt ein einzelnes Script im "Sinatra"-Style, welches unter
+C<src/HelloWorld> zu finden ist.
+
+=cut
