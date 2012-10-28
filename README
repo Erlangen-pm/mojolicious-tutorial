@@ -84,6 +84,11 @@ Strawberryperl
 cpanminus
     https://metacpan.org/module/App::cpanminus
 
+Padre
+    http://padre-ide.de/blog/
+
+    Perl-IDE für verschiedene Plattformen
+
 Moose, Moo, Mo
     https://metacpan.org/module/Moose
     https://metacpan.org/module/Moo
@@ -97,11 +102,6 @@ Starman
     https://metacpan.org/module/Starman
 
     Hochperformanter preforking Webserver in Perl
-
-Padre
-    http://padre-ide.de/blog/
-
-    Perl-IDE für verschiedene Plattformen
 
 Zielgruppenbeschreibung:
 ========================
