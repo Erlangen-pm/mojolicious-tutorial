@@ -1,6 +1,43 @@
-use utf8;
-
 =head1 Was ist Perl
+
+=head2 Wichtige Konzepte in Perl
+
+=head3 Scalare, Listen, Hashes - Einzahl oder Mehrzahl
+
+=head3 Kontext
+
+=head3 Stringbehandlung
+
+=head3 Reguläre Ausdrücke
+
+    m//xmsi;
+    s///gxmsi;
+
+=head3 C<$_> - It und Freunde
+
+C<$1>-C<$9>, C<@ARGV>, C<@_>
+
+=head3 Blöcke
+
+=head3 Kontrollstrukturen
+
+=head3 Subroutinen
+
+=head3 Variablen
+
+=head3 Scoping
+
+=head3 Objektorientierung
+
+=head4 Einfach: blessed References
+
+=head4 Modern: Moose, Moo, Mo, Mouse
+
+=head3 Funktionale Programmierung
+
+=head4 map, grep, sort, Listenkontexte
+
+=head4 Subroutinen wie Daten behandeln/anonyme Subroutinen
 
 =head1 Was ist Mojolicious
 
