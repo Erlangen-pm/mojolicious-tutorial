@@ -1,0 +1,54 @@
+Einführung in das Webframework Mojolicious in der Programmiersprache Perl
+
+Einleitung
+==========
+
+Dies ist ein einfaches Hands-On-Tutorial für moderne Webprogrammierung in Perl
+am Beispiel des Mojolcious-Frameworks. Das Tutorial richtet sich an Programmierer,
+die zumindest mal von Webprogrammierung, relationalen Datenbanken und Perl gehört
+haben.
+
+Vorraussetzungen:
+=================
+
+SQLite >= 3.7.14.1
+    http://sqlite.org/
+
+Perl >= 5.14.2
+    http://perldoc.perl.org
+    http://metacpan.org
+
+Mojolicious >= 3.5
+    http://mojolicio.us/
+
+DBI >= 1.662
+    http://dbi.perl.org/
+
+DBD::SQLite >= 1.37
+    https://metacpan.org/module/DBD::SQLite
+
+DBIx::Class >= 0.08203
+    http://www.dbix-class.org/
+
+Zielgruppenbeschreibung:
+========================
+
++ Ausgezeichnete Kenntnisse:
+  - Umgang mit dem Computer
+  - Umgang mit dem Betriebssystem seiner Wahl
+  - Umgang mit einem Texteditor für Programmieraufgaben (Syntaxhighlighting!)
+  - Umgang mit der Konsole/dem Terminalemulator seiner Wahl
+  - Umgang mit einem Webbrowser
++ Gute Kenntnisse:
+  - Objektorientiertes Programmieren
+  - Imparatives Programmieren
+  - Webprogrammierung Allgemein
+  - HTML, CSS
++ Anfänger-Kenntnisse:
+  - MVC
+  - Perl
+  - Relationale Datenbanken
+  - Objektrelationale Mapper für relationale Datenbanken
+  - SQL
+  - Funktionales Programmieren
+  - Javascript/JQuery
