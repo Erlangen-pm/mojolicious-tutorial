@@ -293,20 +293,18 @@ Weitere Funktionen:
       <body><%= content %></body>
     </html>
 
-=over 1
+Beispiele und Erklärung für inline-Perl:
 
-=item C<% >
-
-=item C<%= >
-
-=item C<%== >
-
-=item C<E<lt>% ... %E<gt>>
-
-=item C<E<lt>%= ... %E<gt>>
-
-=item C<E<lt>%== ... %E<gt>>
-
-=back
+    <h1>Perl-Code-Schnippsel für die gesamte Zeile, &quot;;&quot; nicht notwendig</h1>
+    <h2>Ohne Ausgabe</h2>
+    % say 'Hi'
+    <h2>Mit Ausgabe, diese wird vorher HTML-Escaped</h2>
+    %= say '3 > 2'
+    <h2>Mit Ausgabe, diese wird vorher <u>nicht</u> HTML-Escaped</h2>
+    %== say '3 &gt; 2'
+    <h1>Perl-Code-Schnippsel, die direkt zwischen HTML verwendet werden können:</h1>
+    <h2>Ohne Ausgabe<% say 'Hi' %></h2>
+    <h2>Mit Ausgabe, diese wird vorher HTML-Escaped: <%= say '3 > 2' %></h2>
+    <h2>Mit Ausgabe, diese wird vorher <u>nicht</u> HTML-Escaped: <%== say '3 &gt; 2' %></h2>
 
 =cut
