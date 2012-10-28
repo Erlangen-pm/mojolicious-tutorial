@@ -129,9 +129,13 @@ Templates, Routen, Modernes Perl, MVC
 =head4 Weitere Templates über Plugins verfügbar
 
 =over 1
+
 =item L<https://metacpan.org/module/MojoX::Renderer::HTP>
+
 =item L<https://metacpan.org/module/Mojolicious::Plugin::TtRenderer>
+
 =item L<https://metacpan.org/module/Mojolicious::Plugin::Mason2Renderer>
+
 =back
 
 =head3 Routen
