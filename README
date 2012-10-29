@@ -84,6 +84,13 @@ Strawberryperl
 cpanminus
     https://metacpan.org/module/App::cpanminus
 
+PerlTidy
+    https://metacpan.org/module/perltidy
+
+    Quellcode-Filter zum nachträglichen Formatieren von Perl-Code 
+    gemäß der Empfehlungen aus dem Buch "Perl Best Practices" von
+    Damian Conway
+
 Padre
     http://padre-ide.de/blog/
 
