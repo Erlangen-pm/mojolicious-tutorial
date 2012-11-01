@@ -128,21 +128,6 @@ C<$">, C<$/>, C<$\>, C<$0>, C<$.>
 
 =head1 Was ist Mojolicious
 
-=head2 ojo
-
-Diese ist ein Modul für Onliner, welche die Möglichkeiten von Mojolicious (CSS3-Selectoren,
-Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
-
-    $ perl -Mojo -E 'say g("mojolicio.us")->dom->at("title")->text'
-
-=over 1
-
-=item L<Weitere Informationen|https://metacpan.org/module/ojo>
-
-=item L<Perl-Commandline-Flags|http://perldoc.perl.org/perlrun.html>
-
-=back
-
 =head3 Perl-Kommandozeilenreferenz - praktische Kurzfassung
 
 =head4 -e
@@ -305,6 +290,27 @@ ein ähnliches Konzept mit Mojolicious::Lite (siehe unten).
 Vorteile: Große Community, viele Plugins, leichter Einstieg, schnelle Entwicklung
 
 Nachteile: Paar mehr Abhängigkeiten als Mojolicious + Ich kenn mich damit nicht aus :P.
+
+=head2 Kommandozeilenprogramme für die Arbeit mit Mojolicious
+
+=head3 mojo
+
+=head3 morbo
+
+=head3 ojo
+
+Diese ist ein Modul für Onliner, welche die Möglichkeiten von Mojolicious (CSS3-Selectoren,
+Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
+
+    $ perl -Mojo -E 'say g("mojolicio.us")->dom->at("title")->text'
+
+=over 1
+
+=item L<Weitere Informationen|https://metacpan.org/module/ojo>
+
+=item L<Perl-Commandline-Flags|http://perldoc.perl.org/perlrun.html>
+
+=back
 
 =head2 Konzepte hinter Mojolicous
 
