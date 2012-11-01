@@ -74,9 +74,13 @@ Datentypen verwaltet. Deswegen seien die Grunddatentypen im Folgenden kurz
 aufgeführt.
 
 =head3 Numerische Werte
+
 =head3 Zeichenketten
+
 =head3 Boolsche Werte
+
 =head3 Dateihandles
+
 =head3 Codereferenzen
 
 =head3 Scalare, Listen, Hashes - Einzahl oder Mehrzahl
