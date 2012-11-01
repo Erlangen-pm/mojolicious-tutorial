@@ -1,8 +1,6 @@
 =encoding utf8
 
-=head1 Programmieren einer Webanwendung mit Mojolicious
-
-=head2 Warum Mojolicious?
+=head1 Warum Mojolicious?
 
 Mojolicious ist ein Framework für Webanwendungen, welches grundlegende Aufgaben
 der Webprogrammierung übernimmt. Es orientiert sich am MVC-Prinzip und forciert
@@ -18,12 +16,12 @@ modernen Perl (>= 5.10.1, aber unter dem läuft Mojolicious eh nicht) erforderli
 Das soll die Einstiegshürde minimieren und das verteilen von Mojolicious-Anwendungen
 erleichtern.
 
-=head3 Warum nicht CGI?
+=head2 Warum nicht CGI?
 
 Plack, FastCGI, Parameterbehandlung, Sessionhandling, JSON, REST, Plugins,
 Templates, Routen, modernes Perl, MVC
 
-=head3 Warum nicht Catalyst?
+=head2 Warum nicht Catalyst?
 
 Catalyst ist ebenfalls ein MVC-Webframework.
 
@@ -35,7 +33,7 @@ erfordert, bevor es an das Programmieren gehen kann. Es wird behauptet, um Catal
 zu installieren, muss man das halbe CPAN auf seinen Rechner laden (mit all den Problemen,
 wenn sich Module zum Beispiel im System nicht problemlos Out-Of-The-Box installieren lassen).
 
-=head3 Warum nicht Dancer?
+=head2 Warum nicht Dancer?
 
 Dance ist ein Sinatra-ähnliches Framework. Es hat ein weitestgehend funktionales 
 Interface. Die MVC-Trennung wird nicht so stark forciert. Mojolicious bietet optional
@@ -45,13 +43,13 @@ Vorteile: Große Community, viele Plugins, leichter Einstieg, schnelle Entwicklu
 
 Nachteile: Paar mehr Abhängigkeiten als Mojolicious + Ich kenn mich damit nicht aus :P.
 
-=head2 Kommandozeilenprogramme für die Arbeit mit Mojolicious
+=head1 Kommandozeilenprogramme für die Arbeit mit Mojolicious
 
-=head3 mojo
+=head2 mojo
 
-=head3 morbo
+=head2 morbo
 
-=head3 ojo
+=head2 ojo
 
 Diese ist ein Modul für Onliner, welche die Möglichkeiten von Mojolicious (CSS3-Selectoren,
 Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
@@ -66,15 +64,15 @@ Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
 
 =back
 
-=head2 Konzepte hinter Mojolicous
+=head1 Konzepte hinter Mojolicous
 
-=head3 MVC - Model+View+Controler
+=head2 MVC - Model+View+Controler
 
-=head3 Templates
+=head2 Templates
 
-=head4 Embedded-Perl-Template
+=head3 Embedded-Perl-Template
 
-=head4 Weitere Templates über Plugins verfügbar
+=head3 Weitere Templates über Plugins verfügbar
 
 =over 1
 
@@ -86,21 +84,21 @@ Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
 
 =back
 
-=head3 Routen und Parameter
+=head2 Routen und Parameter
 
-=head3 Controller
+=head2 Controller
 
-=head3 Code-Generierung über das Kommandozeilenprogramm C<mojo>
+=head2 Code-Generierung über das Kommandozeilenprogramm C<mojo>
 
-=head3 Testing
+=head2 Testing
 
-=head3 Deployment
+=head2 Deployment
 
-=head4 Reverse Proxy
+=head3 Reverse Proxy
 
-=head4 CGI, FastCGI, mod_perl
+=head3 CGI, FastCGI, mod_perl
 
-=head2 Erste Schritte: "Hello World"
+=head1 Erste Schritte: "Hello World"
 
 Mojolicious verfügt über einen Mechanismus, der sich C<Mojolicious::Lite> nennt. C<Mojolicious::Lite>
 stellt einen vereinfachten prozeduralen Zugang zu Mojolicious dar, über den wie im Stil von "Sinatra" 
@@ -141,15 +139,15 @@ an der Kommandozeile aufgerufen werden. Dann werden die im C<__DATA__>-Bereich a
 ihrer Pfade entsprechend auf Verzeichnisse aufgeteilt und die Arbeit am großen Mojolicious-Projekt
 kann beginnen.
 
-=head3 Walkthrough durch die Begrüßte Welt
+=head2 Walkthrough durch die Begrüßte Welt
 
-=head4 Hashbang!
+=head3 Hashbang!
 
 Sollte klar sein, die Unixtypische SheBang oder Hashbang oder wie auch immer man das nennen möchte.
 
     #!/usr/bin/env perl
 
-=head4 Mojolicious einbinden
+=head3 Mojolicious einbinden
 
     use Mojolicious::Lite;
 
@@ -159,7 +157,7 @@ und von jedem Perl-Profi nahegelegt wird?
 Antwort: Der Aufruf C<use Mojolicious::Lite;> schaltet automatisch die Pragmas C<strict>
 und C<warnings> ein, welche sonst separat mit L<perlfunc/"use"> aufgerufen werden müssten.
 
-=head4 Ein Plugin verwenden
+=head3 Ein Plugin verwenden
 
 Plugins werden mit der Subroutine C<plugin> zugeschalten.
 
@@ -171,7 +169,7 @@ der lokalen Perl-Umgebung bequem im Browser über die URL L<http://localhost:300
 bzw. L<http://localhost:3000/perldoc/perltoc> oder L<http://localhost:3000/perldoc/Modulname>
 angezeigt werden.
 
-=head4 Eine Route mit Controller definieren
+=head3 Eine Route mit Controller definieren
 
     get '/' => sub {
       my $self = shift;
@@ -214,19 +212,19 @@ Weitere Funktionen:
 
 =back
 
-=head4 Die Anwendung starten
+=head3 Die Anwendung starten
 
     app->start;
 
-=head4 Der Data-Bereich mit Inline-Templates und statischen Dateien
+=head3 Der Data-Bereich mit Inline-Templates und statischen Dateien
 
     __DATA__
 
-=head4 Dateipfade für Inline-Dateien und -Templates
+=head3 Dateipfade für Inline-Dateien und -Templates
 
     @@ index.html.ep
 
-=head4 Perl-Code in Mojolicious-Embedded-Perl-Templates
+=head3 Perl-Code in Mojolicious-Embedded-Perl-Templates
 
     % layout 'default';
     % title 'Welcome';

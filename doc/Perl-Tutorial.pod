@@ -45,7 +45,7 @@ seit sieben Jahren existiert. Die aktuelle Version von Perl ist 5.16.1 und es
 ist entschieden zu empfehlen, diese Version zu verwenden und deren Features auch
 auszunutzen.
 
-=head2 Wichtige Konzepte in Perl
+=head1 Wichtige Konzepte in Perl
 
 Im folgenden sollen ansatzweise grundlegende Konzepte von Perl überblickshalber 
 vorgestellt werden. Diese Liste ist keinesfalls vollständig und kann auch nicht
@@ -54,7 +54,7 @@ als Zusammenfassung dienen, um eine einheitliche Terminologie für das Tutorial
 festzulegen und um eine Referenz während des Tutorials zur Hand zu geben, auf deren
 Grundlage man sich weiterführend informieren kann.
 
-=head3 Dynamische Typisierung
+=head2 Dynamische Typisierung
 
 Perl ist dynamisch typisiert. Variablen können beliebige Werte annehmen und Perl
 kümmert sich intern automatisch um das passende Type-Casting.
@@ -73,76 +73,76 @@ ebenfalls zu kennen und einen Einblick zu haben in die Art, wie Perl diese
 Datentypen verwaltet. Deswegen seien die Grunddatentypen im Folgenden kurz
 aufgeführt.
 
-=head3 Numerische Werte
+=head2 Numerische Werte
 
-=head3 Zeichenketten
+=head2 Zeichenketten
 
-=head3 Boolsche Werte
+=head2 Boolsche Werte
 
-=head3 Dateihandles
+=head2 Dateihandles
 
-=head3 Codereferenzen
+=head2 Codereferenzen
 
-=head3 Scalare, Listen, Hashes - Einzahl oder Mehrzahl
+=head2 Scalare, Listen, Hashes - Einzahl oder Mehrzahl
 
-=head3 Variablen
+=head2 Variablen
 
 SV-Einträge
 
-=head3 Kontext
+=head2 Kontext
 
-=head3 Namensräume
+=head2 Namensräume
 
-=head3 Stringbehandlung
+=head2 Stringbehandlung
 
-=head3 Reguläre Ausdrücke
+=head2 Reguläre Ausdrücke
 
     m//xmsi;
     s///gxmsi;
 
-=head3 C<$_> - It und Freunde
+=head2 C<$_> - It und Freunde
 
 C<$1>-C<$9>, C<@ARGV>, C<@_>
 
 C<STDIN>, C<STDOUT>, C<STDERR>
 
-=head4 Und noch mehr magische Variablen
+=head3 Und noch mehr magische Variablen
 
 C<$">, C<$/>, C<$\>, C<$0>, C<$.>
 
-=head3 Blöcke
+=head2 Blöcke
 
-=head3 Kontrollstrukturen
+=head2 Kontrollstrukturen
 
-=head3 Subroutinen
+=head2 Subroutinen
 
-=head3 Scoping
+=head2 Scoping
 
-=head3 Objektorientierung
+=head2 Objektorientierung
 
-=head4 Einfach: blessed References
+=head3 Einfach: blessed References
 
-=head4 Modern: Moose, Moo, Mo, Mouse
+=head3 Modern: Moose, Moo, Mo, Mouse
 
-=head3 Funktionale Programmierung
+=head2 Funktionale Programmierung
 
-=head4 map, grep, sort, Listenkontexte
+=head3 map, grep, sort, Listenkontexte
 
-=head4 Subroutinen wie Daten behandeln/anonyme Subroutinen
+=head3 Subroutinen wie Daten behandeln/anonyme Subroutinen
 
-=head3 Perl-Kommandozeilenreferenz - praktische Kurzfassung
+=head2 Perl-Kommandozeilenreferenz - praktische Kurzfassung
 
-=head4 -e
+=head3 -e
 
 Der Parameter, der nach C<-e> kommt ist Perl-Code und wird ausgeführt.
 
-=head4 -E
+=head3 -E
 
 Wie C<-e>, nur mit Features freigeschalten (Features, die ab Perl Version 
 5.10 verfügbar sind und unter Umständen mit der Rückwärtskompatibilität 
 brechen).
 
-=head4 -n, -p
+=head3 -n, -p
 
 Wird in Zusammenhang mit C<-e> und C<-E> verwendet.
 
@@ -164,12 +164,12 @@ Nachbereitungsaufgaben der zeilenweisen Abarbeitung durchgeführt werden können
 
 C<-p> gibt zusätzlich am Ende der Datei den letztgesetzten Inhalt von C<$_> aus.
 
-=head4 -l
+=head3 -l
 
 Damit kann man die Automatische Zeilenendebehandlung einschalten. D.h. den eingelesenen
 Zeilen bei C<-n> und C<-p> wird automatisch der Zeilenumbruch abgeschnitten.
 
-=head4 -a
+=head3 -a
 
 Splittet eine Zeile bei C<-n> oder C<-p> automatisch an Leerzeichenähnlichen Zeichen 
 auf und packt die Teile in das vorbereitete C<@F>.
@@ -182,26 +182,26 @@ Mit C<-F> kann man bei Verwendung von C<-a> ein Zeichen angeben, an welchem
 eine Zeile aufgespalten wird. Das entsprechende Zeichen muss C<-F> als Parameter
 mitgegeben werden.
 
-=head4 -M
+=head3 -M
 
 Das dem C<-M> als Parameter mitgegebene Modul laden (L<perlfunc/"use Module">).
 Für mehrere zu ladende Module kann C<-M> mehrmals angegeben werden.
 
-=head4 -I
+=head3 -I
 
 Gibt als Parameter einen zusätzlichen Pfad an, in dem Perl nach Modulen sucht.
 Für mehrere Pfade kann C<-I> mehrmals verwendet werden.
 
-=head4 -c
+=head3 -c
 
 Prüft lediglich die Syntax eines Perl-Scriptes.
 
-=head4 -w
+=head3 -w
 
 Schaltet Warnungen ein, die den Programmierer mit zusätzlichen Meldungen
 vor Fehlern bewahren sollen.
 
-=head4 -T
+=head3 -T
 
 Schaltet den Taint-Modus ein. Hier werden alle Daten, die von außerhalb des
 Programmes kommen als gefleckt markiert und dürfen erst weiter verwendet werden
@@ -209,7 +209,7 @@ Programmes kommen als gefleckt markiert und dürfen erst weiter verwendet werden
 in dem man die Daten gegen eine RegEx prüft und daraus dann die eigentlichen
 Nutzdaten zieht).
 
-=head4 -d
+=head3 -d
 
 Schaltet den Debugger zu. Beispielsweise kann man mit C<-d:DNYTProf> den 
 Profiler L<Devel::NYTProf> verwenden, um das Programm zu profilen.
@@ -220,7 +220,7 @@ Geht direkt in den Debugmodus ohne vorher Code auszuführen. Das ist das Perl-
 Äquivalent einer Interaktiven Shellumgebung (sowas wie C<irb> in Ruby oder
 ansatzweise der REPL in LISP).
 
-=head2 Weiterführende Informationen
+=head1 Weiterführende Informationen
 
 =over 1
 
@@ -242,9 +242,9 @@ ansatzweise der REPL in LISP).
 
 =head1 Verbreitete Technologien in Perl außerhalb der Webentwicklung
 
-=head2 CPAN
+=head1 CPAN
 
-=head2 DBI
+=head1 DBI
 
-=head2 DBIx::Class - ORM in Perl
+=head1 DBIx::Class - ORM in Perl
 
