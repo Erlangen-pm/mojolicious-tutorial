@@ -2,6 +2,49 @@
 
 =head1 Was ist Perl
 
+Perl ist eine interpretierte Programmiersprache, welche viele verschiedene 
+gängige Programmierparadigmen unterstützt. Perl kann für alle denkbaren
+Anwendungsbereiche eingesetzt werden und bietet bereits für sehr viele
+Anwendungsbereiche durch seine modulare Erweiterbarkeit fertige Softwarepakete,
+welche über das zentrale Softwarearchiv CPAN einfach bezogen werden können.
+
+Perl wurde im Rahmen der Systemadministration durch den Linguisten und
+Computeradministrator Larry Wall entwickelt. Am 18.12.1987 veröffentlichte
+Larry Wall die Version 1.0 seiner Programmiersprache, die ihm bei administrativen
+Aufgaben unterstützen sollte. Vorrangig ging es darum, die Unterschiede der
+Shellinterpreter auf verschiedenen Systemen durch eine einheitliche Umgebung
+auszugleichen und die administrative Programmierung dadurch einfacher und
+abwägbarer zu machen.
+
+Ab 1994 gibt es die Hauptversion 5 von Perl, welche alle modernen Konzepte
+in Perl enthält und auf dem das große Spektrum der Perl-Anwendungen aufbaut.
+1995 entstand das CPAN, welches das Herzstück der Mächtigkeit von Perl bis
+heute bildet.
+
+Perl ist sehr streng was die Rückwärtskompatibilität angeht. So können zum Teil
+immer noch in Perl Version 4 geschriebene Programme mit einem aktuellen
+Interpreter ausgeführt werden. Durch diese Rückwärtskompatibilität sind aber
+auch viele Altlasten in Perl hineingekommen, die heutzutage zum Teil überholt
+anmuten. Um mit diesen Altlasten aufzuräumen und damit mit der Rückwärtskompatibilität
+zu brechen wurden ab 2000 ernsthaft an der Entwicklung des Nachfolgers Perl 6
+gearbeitet. Hierbei handelt es sich um eine komplette Neuentwicklung der
+Programmiersprache Perl mit einigen neuen Konzepten, die so bisher in keiner
+Programmiersprache vorhanden waren. Diese Entwicklung dauert bis heute an
+und im produktiven Umfeld führt Perl 6 immer noch ein Nieschendasein.
+
+Dafür erfreut sich Perl 5 weiterhin einer steigenden Beliebtheit und die Entwicklung
+von Perl 6 beeinflußt an vielen Stellen die Entwicklung von Perl 5 mit. In diesem
+Sinne kann man auf die von Perl-Skeptikern gern gestellte eher polemisch gehaltene
+Frage: "Wann kommt denn nun eigentlich Perl 6?" durchaus leichtfertig antworten:
+"Perl 6 ist bereits da, es steckt in den unzähligen Weiterentwicklungen von Perl 5
+und ist fester Bestandteil der modernen Perl-Kultur.
+
+Mojolicious, das Framework in dem es im vorliegenden Tutorial gehen soll,
+verwendet ebenfalls Perl 5. Es läuft mit der Version 5.10.1 oder höher, die bereits
+seit sieben Jahren existiert. Die aktuelle Version von Perl ist 5.16.1 und es
+ist entschieden zu empfehlen, diese Version zu verwenden und deren Features auch
+auszunutzen.
+
 =head2 Wichtige Konzepte in Perl
 
 =head3 Scalare, Listen, Hashes - Einzahl oder Mehrzahl
@@ -19,13 +62,17 @@
 
 C<$1>-C<$9>, C<@ARGV>, C<@_>
 
+C<STDIN>, C<STDOUT>, C<STDERR>
+
+=head4 Und noch mehr magische Variablen
+
+C<$">, C<$/>, C<$\>, C<$0>, C<$.>
+
 =head3 Blöcke
 
 =head3 Kontrollstrukturen
 
 =head3 Subroutinen
-
-=head3 Variablen
 
 =head3 Scoping
 
@@ -148,16 +195,78 @@ Geht direkt in den Debugmodus ohne vorher Code auszuführen. Das ist das Perl-
 Äquivalent einer Interaktiven Shellumgebung (sowas wie C<irb> in Ruby oder
 ansatzweise der REPL in LISP).
 
+=head2 Weiterführende Informationen
+
+=over 1
+
+=item L<http://perl.org>: Perl-Webseite
+
+=item L<http://perldoc.perl.org>: Core-Dokumentation zu Perl
+
+=item L<http://perldoc.perl.org/perltoc>: Core-Dokumentation zu Perl - Wo steht was
+
+=item L<https://metacpan.org>: Suchdienst für Perl-Module und deren Dokumentation
+
+=item L<http://www.perl-community.de>: Deutschsprachiges Perl-Forum
+
+=item L<http://wiki.perl-community.de/>: Deutschsprachiges Wiki zum Thema Perl
+
+=item L<http://ironman.enlightenedperl.org/>: Blogaggregator zum Thema Perl
+
+=back
+
+=head1 Verbreitete Technologien in Perl außerhalb der Webentwicklung
+
+=head2 CPAN
+
+=head2 DBI
+
+=head2 DBIx::Class - ORM in Perl
+
+=head1 Programmieren einer Webanwendung mit Mojolicious
+
 =head2 Warum Mojolicious?
+
+Mojolicious ist ein Framework für Webanwendungen, welches grundlegende Aufgaben
+der Webprogrammierung übernimmt. Es orientiert sich am MVC-Prinzip und forciert
+die zugrundeliegenden Konzepte im Design einer Mojolicious-Anwendungen. Daneben
+abstrahiert es die diversität der zugrundeliegenden Web-Technologien, damit 
+sich der Programmierer auf die eigentliche Anwendung konzentrieren kann.
+
+Wesentliches Augenmerk bei Mojolicious wurde auf die schlanke und übersichtliche
+Architektur der Software gelegt. Um in Mojolicious eine Webanwendung entwickeln
+zu können, ist zunächst lediglich das relativ kleine Modul Mojolicious aus CPAN
+zu installieren. Es sind für den Anfang keine weiteren Abhängigkeiten bei einem
+modernen Perl (>= 5.10.1, aber unter dem läuft Mojolicious eh nicht) erforderlich.
+Das soll die Einstiegshürde minimieren und das verteilen von Mojolicious-Anwendungen
+erleichtern.
 
 =head3 Warum nicht CGI?
 
 Plack, FastCGI, Parameterbehandlung, Sessionhandling, JSON, REST, Plugins,
-Templates, Routen, Modernes Perl, MVC
+Templates, Routen, modernes Perl, MVC
 
 =head3 Warum nicht Catalyst?
 
+Catalyst ist ebenfalls ein MVC-Webframework.
+
+Vorteile: Viele Erfahrungswerte, große professionelle Community, viele Plugins und
+Erweiterungen
+
+Nachteile: Catalyst ist eine komplexe Anwendung, die einigen Einrichtungsaufwand
+erfordert, bevor es an das Programmieren gehen kann. Es wird behauptet, um Catalyst
+zu installieren, muss man das halbe CPAN auf seinen Rechner laden (mit all den Problemen,
+wenn sich Module zum Beispiel im System nicht problemlos Out-Of-The-Box installieren lassen).
+
 =head3 Warum nicht Dancer?
+
+Dance ist ein Sinatra-ähnliches Framework. Es hat ein weitestgehend funktionales 
+Interface. Die MVC-Trennung wird nicht so stark forciert. Mojolicious bietet optional
+ein ähnliches Konzept mit Mojolicious::Lite (siehe unten).
+
+Vorteile: Große Community, viele Plugins, leichter Einstieg, schnelle Entwicklung
+
+Nachteile: Paar mehr Abhängigkeiten als Mojolicious + Ich kenn mich damit nicht aus :P.
 
 =head2 Konzepte hinter Mojolicous
 
@@ -179,7 +288,7 @@ Templates, Routen, Modernes Perl, MVC
 
 =back
 
-=head3 Routen
+=head3 Routen und Parameter
 
 =head3 Controller
 
@@ -192,8 +301,6 @@ Templates, Routen, Modernes Perl, MVC
 =head4 Reverse Proxy
 
 =head4 CGI, FastCGI, mod_perl
-
-=head1 DBIx::Class - ORM in Perl
 
 =head2 Erste Schritte: "Hello World"
 
