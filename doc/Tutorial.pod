@@ -47,9 +47,47 @@ auszunutzen.
 
 =head2 Wichtige Konzepte in Perl
 
+Im folgenden sollen ansatzweise grundlegende Konzepte von Perl überblickshalber 
+vorgestellt werden. Diese Liste ist keinesfalls vollständig und kann auch nicht
+als Lehrmaterial für die Programmiersprache Perl gesehen werden. Es soll lediglich
+als Zusammenfassung dienen, um eine einheitliche Terminologie für das Tutorial
+festzulegen und um eine Referenz während des Tutorials zur Hand zu geben, auf deren
+Grundlage man sich weiterführend informieren kann.
+
+=head3 Dynamische Typisierung
+
+Perl ist dynamisch typisiert. Variablen können beliebige Werte annehmen und Perl
+kümmert sich intern automatisch um das passende Type-Casting.
+
+Was dem Programmierer die Arbeit erleichtert, um schneller mit variablen Daten
+arbeiten zu können, bereitet auf der anderen Seite zusätzlichen Aufwand, wenn
+es darum geht, bestimmte Datentypen zu forcieren. So ist es in der Webentwicklung
+unumgänglich, Benutzereingaben selbstständig gründlich zu prüfen, bevor sie 
+weitergereicht werden, was man bei der Webentwicklung immer im Hinterkopf behalten
+sollte.
+
+Perl muss intern aber durchaus ein Wissen um die verschiedenen Datentypen haben,
+um die automatischen Typumwandlungen effizient und sinnvoll durchführen zu können.
+Für einen Perl-Programmierer lohnt es sich aber durchaus, diese Datentypen 
+ebenfalls zu kennen und einen Einblick zu haben in die Art, wie Perl diese 
+Datentypen verwaltet. Deswegen seien die Grunddatentypen im Folgenden kurz
+aufgeführt.
+
+=head3 Numerische Werte
+=head3 Zeichenketten
+=head3 Boolsche Werte
+=head3 Dateihandles
+=head3 Codereferenzen
+
 =head3 Scalare, Listen, Hashes - Einzahl oder Mehrzahl
 
+=head3 Variablen
+
+SV-Einträge
+
 =head3 Kontext
+
+=head3 Namensräume
 
 =head3 Stringbehandlung
 
