@@ -130,8 +130,6 @@ C<$">, C<$/>, C<$\>, C<$0>, C<$.>
 
 =head4 Subroutinen wie Daten behandeln/anonyme Subroutinen
 
-=head1 Was ist Mojolicious
-
 =head3 Perl-Kommandozeilenreferenz - praktische Kurzfassung
 
 =head4 -e
