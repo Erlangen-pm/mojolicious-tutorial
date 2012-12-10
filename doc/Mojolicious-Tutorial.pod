@@ -70,20 +70,6 @@ Web-Requests) auf einfach Weise für die Kommandozeile bereit stellen.
 
 =head2 Templates
 
-=head3 Embedded-Perl-Template
-
-=head3 Weitere Templates über Plugins verfügbar
-
-=over 1
-
-=item L<https://metacpan.org/module/MojoX::Renderer::HTP>
-
-=item L<https://metacpan.org/module/Mojolicious::Plugin::TtRenderer>
-
-=item L<https://metacpan.org/module/Mojolicious::Plugin::Mason2Renderer>
-
-=back
-
 =head2 Routen und Parameter
 
 =head2 Controller
@@ -237,6 +223,10 @@ Weitere Funktionen:
       <body><%= content %></body>
     </html>
 
+=head2 Templates
+
+=head3 Inline-Perl, der Standard
+
 Beispiele und Erklärung für inline-Perl:
 
     <h1>Perl-Code-Schnippsel für die gesamte Zeile, &quot;;&quot; nicht notwendig</h1>
@@ -250,5 +240,18 @@ Beispiele und Erklärung für inline-Perl:
     <h2>Ohne Ausgabe<% say 'Hi' %></h2>
     <h2>Mit Ausgabe, diese wird vorher HTML-Escaped: <%= say '3 > 2' %></h2>
     <h2>Mit Ausgabe, diese wird vorher <u>nicht</u> HTML-Escaped: <%== say '3 &gt; 2' %></h2>
+
+
+=head3 Weitere Templates über Plugins verfügbar
+
+=over 1
+
+=item L<https://metacpan.org/module/MojoX::Renderer::HTP>
+
+=item L<https://metacpan.org/module/Mojolicious::Plugin::TtRenderer>
+
+=item L<https://metacpan.org/module/Mojolicious::Plugin::Mason2Renderer>
+
+=back
 
 =cut
