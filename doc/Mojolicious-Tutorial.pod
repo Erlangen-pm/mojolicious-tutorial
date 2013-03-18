@@ -35,7 +35,7 @@ wenn sich Module zum Beispiel im System nicht problemlos Out-Of-The-Box installi
 
 =head2 Warum nicht Dancer?
 
-Dance ist ein Sinatra-ähnliches Framework. Es hat ein weitestgehend funktionales 
+Dancer ist ein Sinatra-ähnliches Framework. Es hat ein weitestgehend funktionales 
 Interface. Die MVC-Trennung wird nicht so stark forciert. Mojolicious bietet optional
 ein ähnliches Konzept mit Mojolicious::Lite (siehe unten).
 
